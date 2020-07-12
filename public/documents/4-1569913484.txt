@@ -1,0 +1,4 @@
+$rides = Rides::selectRaw('COUNT(rides.id) AS total, SUM(amount) AS total_amount, lawfirms.name AS lawfirminfo, users.firstname, users.lastname')
+                ->leftJoin('lawfirm_user_profiles', 'rides.lawfirm_user_id', 'lawfirm_user_profiles.user_id')
+                ->leftJoin('lawfirms', 'lawfirm_user_profiles.lawfirm_id', '=', 'lawfirms.id')
+                ->leftJoin('users', 'rides.callcenter_professional_id', '=', 'users.id');

@@ -1,0 +1,180 @@
+<?php
+
+return [
+    'ADDITIONAL_RIDE_SPECIFICATIONS' => [
+        1 => 'Under age 18',
+        2 => 'Wheelchair bound or impaired mobility',
+        3 => 'TBI Injury',
+        4 => 'Mentally impaired',
+        5 => 'Additional passenger (s)',
+        6 => 'Service dog',
+        7 => 'Non-English speaking (please specify language in other section below)'
+    ],
+    'ADDITIONAL_SERVICES' => [
+        1 => 'Pharmacy + overnight delivery',
+        2 => 'Medical Funding Company',
+        3 => 'Imaging',
+        4 => 'Pain MD/Surgeon',
+        5 => 'Chiropractor',
+        6 => 'Physical Therapy',
+        7 => 'Pre-Settlement Funding',		
+    ],
+    'ADDITIONAL_SERVICES_RX' => [
+        1 => 'Transportation',
+        2 => 'Medical Funding Company',
+        3 => 'Imaging',
+        4 => 'Pain MD/Surgeon',
+        5 => 'Chiropractor',
+        6 => 'Physical Therapy',
+        7 => 'Pre-Settlement Funding',		
+    ],
+	'ACCIDENT_TYPE' => [
+        1 => 'MVA',
+        2 => 'assault/battery',
+        3 => 'dog bite/other',
+        4 => 'premises liability',
+    ],
+    'LIABILITY' => [
+        1 => 'Adverse party liable',
+        2 => 'Shared/disputed liability',
+        3 => 'Current info suggested adverse party liable',
+        4 => 'Undetermined'
+    ],
+    'CLIENT_OUTSTANDING_MEDS_TO_DATE' => [
+        1 => '$0-$5,000',
+        2 => '$5,000-$10,000 ',
+        3 => 'above $10,000',
+    ],
+    'INSURANCE' => [
+        1 => 'Adverse party has minimum insurance',
+        2 => 'Adverse party has $100,000',
+        3 => 'Adverse party commercial insurance',
+		4 => 'Unknown',
+		5 => 'None',		
+    ],    
+	'PROPERTY_DAMAGE' => [
+        1 => 'Major',
+        2 => 'Minor',
+        3 => 'None',
+        4 => 'Other',
+    ],
+	'RX_COVERAGE' => [
+        1 => 'Financial hardship out of pocket',
+        2 => 'Insurance denied coverage ',
+        3 => 'Other',
+    ],
+    'BOOLEAN' => [
+        'ACTIVE' => 1,
+        'INACTIVE' => 0,
+        'PENDING' => 2
+    ],
+    'GENDER' => [
+        'MALE' => 1,
+        'FEMALE' => 2
+    ],
+    'LAWFIRM_USER_TITLE' => [
+        'Attorney',
+        'Case Manager',
+        'Paralegal',
+        'Legal Assistant',
+        'Other'
+    ],
+    'PASSENGER_STATUS' => [
+        'NOT_ASSIGNED' => 'Not Assigned',
+        'UNDER_REVIEW' => 'Under Review',
+        'ACTIVE' => 'Active',
+        'DENIED' => 'Denied',
+        'CLOSED_PAID' => 'Closed',
+        'CLOSED_PAID_PENDING_PAYMENT' => 'Pending Payment',
+        'UNDERTAKING' => 'Underwriting Provided'
+    ],
+    'PERMISSION_GROUPS' => [
+        'PASSENGER_REQUEST' => 'passenger_request',
+        'OUTSTANDING_BILL' => 'outstanding_bill',
+        'PAID_BILL' => 'paid_bill',
+        'EMAIL_SETTING' => 'email_setting',
+        'MANAGE_USER' => 'manage_user',
+        'SCHEDULE_PERSONAL_RIDE' => 'schedule_personal_ride',
+        'FREQUENT_ADDRESS' => 'frequent_address',
+        'OUTSTANDING_BALANCE_LIMIT' => 'outstanding_balance_limit',
+        'AMOUNT_REDUCTION' => 'amount_reduction',
+        'LAWFIRM_DETAILS' => 'lawfirm_details',
+        'PASSENGER_DETAILS' => 'passenger_details',
+        'HISTORY_LOGS' => 'history_logs',
+        'RIDE_DETAILS' => 'ride_details',
+		'ADMIN_DASHBOARD' => 'admin_dashboard',
+    ],
+    'USER_TYPES' => [
+        'ADMIN' => 'admin',
+        'APPROVER' => 'approver',
+        'BOOK_KEEPER' => 'book_keeper',
+        'CALL_CENTER_PROFESSIONAL' => 'call_center_professional',
+        'AUTHORIZED_USER' => 'authorized_user',
+        'REGULAR_USER' => 'regular_user'
+    ],
+    'USER_PERMISSIONS' => [
+        'ADMIN' => [
+            'MANAGE_USER' => ['staff_create', 'staff_view', 'staff_update', 'view', 'update'],
+            'OUTSTANDING_BILL' => ['view', 'update'],
+            'PAID_BILL' => ['view'],
+            'AMOUNT_REDUCTION' => ['create'],
+            'PASSENGER_REQUEST' => ['view', 'edit'],
+            'LAWFIRM_DETAILS' => ['view', 'update'],
+            'PASSENGER_DETAILS' => ['view'],
+            'HISTORY_LOGS' => ['view', 'passenger'],
+            'RIDE_DETAILS' => ['view'],
+            'SCHEDULE_PERSONAL_RIDE' => ['view'],
+			'ADMIN_DASHBOARD' => ['view']
+        ],
+        'APPROVER' => [
+            'MANAGE_USER' => ['view'],
+            'PASSENGER_REQUEST' => ['view', 'update'],
+            'OUTSTANDING_BILL' => ['view'],
+            'PAID_BILL' => ['view'],
+            'SCHEDULE_PERSONAL_RIDE' => ['view'],
+            'LAWFIRM_DETAILS' => ['view', 'lawfirmuser_view', 'update'],
+            'PASSENGER_DETAILS' => ['view'],
+            'FREQUENT_ADDRESS' => ['view'],
+            'HISTORY_LOGS' => ['passenger'],
+            'RIDE_DETAILS' => ['view'],
+            'PASSENGER_DETAILS' => ['view'],
+        ],
+        'AUTHORIZED_USER' => [
+            'PASSENGER_REQUEST' => ['create', 'view'],
+            'OUTSTANDING_BILL' => ['view'],
+            'PAID_BILL' => ['view', 'create'],
+            'EMAIL_SETTING' => ['create'],
+			'LAWFIRM_DETAILS' => ['view','lawfirmuser_view'],
+            'PASSENGER_DETAILS' => ['view'],
+            'HISTORY_LOGS' => ['passenger'],
+            'RIDE_DETAILS' => ['view'],
+            'MANAGE_USER' => ['create', 'lawfirmuser_view','update'],
+        ],
+        'BOOK_KEEPER' => [
+            'MANAGE_USER' => ['view'],
+            'PASSENGER_REQUEST' => ['view'],
+            'OUTSTANDING_BILL' => ['view'],
+            'PAID_BILL' => ['view'],
+            'LAWFIRM_DETAILS' => ['view', 'lawfirmuser_view'],
+            'PASSENGER_DETAILS' => ['view'],
+            'HISTORY_LOGS' => ['passenger'],
+        ],
+        'CALL_CENTER_PROFESSIONAL' => [
+            'PASSENGER_REQUEST' => ['view'],
+            'FREQUENT_ADDRESS' => ['view'],
+            'OUTSTANDING_BALANCE_LIMIT' => ['view'],
+            'SCHEDULE_PERSONAL_RIDE' => ['view'],
+            'PASSENGER_DETAILS' => ['view'],
+            'HISTORY_LOGS' => ['passenger'],
+            'RIDE_DETAILS' => ['view'],
+        ],
+        'REGULAR_USER' => [
+            'PASSENGER_REQUEST' => ['create', 'view'],
+            'OUTSTANDING_BILL' => ['view'],
+            'EMAIL_SETTING' => ['create'],
+        ],
+    ],
+    'DEFAULT_REDUCTION_PERCENT' => [ 'amount' => 5 ],
+	'RX_PATHS' => [ 'READ' => '/logs', 'WRITE'=>'C:/Users/RAJKUMAR/Desktop/incoming/laravel' ],
+];
+
